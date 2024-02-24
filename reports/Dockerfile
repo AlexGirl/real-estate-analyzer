@@ -1,5 +1,5 @@
-FROM amazoncorretto:17-alpine-jdk
-VOLUME /tmp
+FROM eclipse-temurin:17-jdk-alpine
+VOLUME /reports
 ARG JAR_FILE
-COPY ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+COPY ${JAR_FILE} reports.jar
+ENTRYPOINT ["java","-jar","/reports.jar"]
